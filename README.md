@@ -1,24 +1,60 @@
-# README
+# User Stories
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Iteration 1
 
-Things you may want to cover:
+### CRUD
 
-* Ruby version
+&nbsp;
 
-* System dependencies
+[x] done
 
-* Configuration
+User Story 1, Resort Index
 
-* Database creation
+For each resort table
+As a visitor
+When I visit '/resorts'
+Then I see the name of each resort record in the system
 
-* Database initialization
+&nbsp;
 
-* How to run the test suite
+[x] done
 
-* Services (job queues, cache servers, search engines, etc.)
+User Story 2, Resort Show
 
-* Deployment instructions
+As a visitor
+When I visit '/resorts/:id'
+Then I see the resort with that id including the resort's attributes
+(data from each column that is on the resort table)
 
-* ...
+&nbsp;
+
+[x] done
+
+User Story 3, Guest Index
+
+As a visitor
+When I visit '/guests'
+Then I see each guest in the system including the guest's attributes
+(data from each column that is on the guest table)
+
+&nbsp;
+
+[x] done
+
+User Story 4, Guest Show
+
+As a visitor
+When I visit '/guests/:id'
+Then I see the guest with that id including the guest's attributes
+(data from each column that is on the guest table)
+
+&nbsp;
+
+[x] done
+
+User Story 5, Resorts Guests Index
+
+As a visitor
+When I visit '/resorts/:resort_id/guests'
+Then I see each guest that is associated with that resort with each guest's attributes
+(data from each column that is on the guest table)
