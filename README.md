@@ -139,7 +139,7 @@ and I am redirected to the Resort Index page where I see the new resort displaye
 
 &nbsp;
 
-[ ] done
+[x] done
 
 User Story 12, Resort Update
 

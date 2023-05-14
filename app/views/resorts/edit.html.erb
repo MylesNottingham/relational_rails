@@ -1,0 +1,18 @@
+<%= link_to "All Guests", "/guests" %>
+<%= link_to "All Resorts", "/resorts" %>
+
+<h1>Update Resort</h1>
+<form action="/resorts/<%= @resort.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <label for="name">Name:</label>
+    <input type="text" id="name" name="resort[name]" value="<%= @resort.name %>" /><br/>
+  <label for="max_capacity">Max Capacity:</label>
+    <input type="number" id="max_capacity" name="resort[max_capacity]" min="1" max="2000" value="<%= @resort.max_capacity %>" /><br/>
+  <p>Open for Season:</p>
+    <input type="radio" id="open" name="resort[open_for_season]" value="true" />
+      <label for="open">Yes</label><br/>
+    <input type="radio" id="not_open" name="resort[open_for_season]" value="false" />
+      <label for="not_open">No</label><br/>
+  <input type="submit" id="submit"/>
+</form>

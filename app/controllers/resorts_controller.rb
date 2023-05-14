@@ -21,4 +21,21 @@ class ResortsController < ApplicationController
     resort.save
     redirect_to "/resorts"
   end
+
+  def edit
+    @resort = Resort.find(params[:id])
+  end
+
+  def update
+    resort = Resort.find(params[:id])
+    resort.update(
+      {
+        name: params[:resort][:name],
+        max_capacity: params[:resort][:max_capacity],
+        open_for_season: params[:resort][:open_for_season] == "true" ? true : false
+      }
+    )
+    resort.save
+    redirect_to "/resorts/#{resort.id}"
+  end
 end

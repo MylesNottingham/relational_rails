@@ -38,7 +38,7 @@ RSpec.describe "Resort New Page" do
       fill_in "Max Capacity:", with: 100
       choose "open"
 
-      click_button "create_resort"
+      click_button "submit"
 
       expect(current_path).to eq("/resorts")
       expect(page).to have_content("Test Resort")
@@ -55,7 +55,7 @@ RSpec.describe "Resort New Page" do
       fill_in "Max Capacity:", with: 200
       choose "not_open"
 
-      click_button "create_resort"
+      click_button "submit"
 
       expect(current_path).to eq("/resorts")
       expect(page).to have_content("Test Resort 2")

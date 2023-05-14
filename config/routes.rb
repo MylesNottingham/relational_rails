@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post "/resorts", to: "resorts#create"
   get "/resorts/new", to: "resorts#new"
   get "/resorts/:id", to: "resorts#show"
+  patch "/resorts/:id", to: "resorts#update"
+  get "/resorts/:id/edit", to: "resorts#edit"
 
   get "/resorts/:id/guests", to: "resorts/guests#index"
 
