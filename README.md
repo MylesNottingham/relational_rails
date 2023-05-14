@@ -74,7 +74,7 @@ And next to each of the records I see when it was created
 
 &nbsp;
 
-[ ] done
+[x] done
 
 User Story 7, Resort Guest Count
 
