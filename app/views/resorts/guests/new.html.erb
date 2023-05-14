@@ -1,0 +1,18 @@
+<%= link_to "All Guests", "/guests" %>
+<%= link_to "All Resorts", "/resorts" %>
+
+<h1>Add New Guest</h1>
+<form action="/resorts/<%= params[:id] %>/guests" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="name">Name:</label>
+    <input type="text" id="name" name="guest[name]"/><br/>
+  <p>Pass Holder:</p>
+    <input type="radio" id="is_pass_holder" name="guest[pass_holder]" value="true"/>
+      <label for="is_pass_holder">Yes</label><br/>
+    <input type="radio" id="is_not_pass_holder" name="guest[pass_holder]" value="false"/>
+      <label for="is_not_pass_holder">No</label><br/><br/>
+  <label for="days_active">Days Active:</label>
+    <input type="number" id="days_active" name="guest[days_active]" min="0" max="365"/><br/><br/>
+  <input type="hidden" name="guest[resort_id]" value="<%= params[:id] %>">
+  <input type="submit" id="submit"/>
+</form>

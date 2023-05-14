@@ -8,3 +8,5 @@
   <p>Pass Holder: <%= guest.pass_holder ? "Yes" : "No" %></p>
   <p>Days Active: <%= guest.days_active %></p>
 <% end %>
+
+<%= link_to "Add New Guest", "/resorts/#{@resort.id}/guests/new" %>

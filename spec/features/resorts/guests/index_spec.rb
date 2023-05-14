@@ -24,6 +24,12 @@ RSpec.describe "Resorts Guests Index Page" do
         click_link "All Resorts"
         expect(current_path).to eq("/resorts")
       end
+
+      it "shows link to add a new guest" do
+        expect(page).to have_link("Add New Guest")
+        click_link "Add New Guest"
+        expect(current_path).to eq("/resorts/#{@mammoth.id}/guests/new")
+      end
     end
 
     describe "body" do
@@ -76,6 +82,12 @@ RSpec.describe "Resorts Guests Index Page" do
         click_link "All Resorts"
         expect(current_path).to eq("/resorts")
       end
+
+      it "shows link to add a new guest" do
+        expect(page).to have_link("Add New Guest")
+        click_link "Add New Guest"
+        expect(current_path).to eq("/resorts/#{@snow_summit.id}/guests/new")
+      end
     end
 
     describe "body" do
@@ -125,6 +137,12 @@ RSpec.describe "Resorts Guests Index Page" do
         expect(page).to have_link("All Resorts")
         click_link "All Resorts"
         expect(current_path).to eq("/resorts")
+      end
+
+      it "shows link to add a new guest" do
+        expect(page).to have_link("Add New Guest")
+        click_link "Add New Guest"
+        expect(current_path).to eq("/resorts/#{@bear_mountain.id}/guests/new")
       end
     end
 

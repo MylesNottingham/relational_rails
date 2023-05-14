@@ -156,13 +156,13 @@ and I am redirected to the Resort Show page where I see the resort's updated inf
 
 &nbsp;
 
-[ ] done
+[x] done
 
 User Story 13, ResortGuest Creation
 
 As a visitor
 When I visit a ResortGuests Index page
-Then I see a link to add a new guest to that resort "Create Guest"
+Then I see a link to add a new guest to that resort "Add New Guest"
 When I click the link
 I am taken to '/resorts/:resort_id/guests/new' where I see a form to add a new guest
 When I fill in the form with the guest's attributes:

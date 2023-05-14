@@ -5,13 +5,13 @@
 <form action="/resorts" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="name">Name:</label>
-    <input type="text" id="name" name="resort[name]"/><br/>
+    <input type="text" id="name" name="resort[name]"/><br/><br/>
   <label for="max_capacity">Max Capacity:</label>
-    <input type="number" id="max_capacity" name="resort[max_capacity]" min="1" max="2000"/><br/>
+    <input type="number" id="max_capacity" name="resort[max_capacity]" min="100" max="2000"/><br/>
   <p>Open for Season:</p>
     <input type="radio" id="open" name="resort[open_for_season]" value="true"/>
       <label for="open">Yes</label><br/>
     <input type="radio" id="not_open" name="resort[open_for_season]" value="false"/>
-      <label for="not_open">No</label><br/>
+      <label for="not_open">No</label><br/><br/>
   <input type="submit" id="submit"/>
 </form>
