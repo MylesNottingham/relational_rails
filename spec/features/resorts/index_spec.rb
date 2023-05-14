@@ -40,7 +40,7 @@ RSpec.describe "Resort Index Page" do
         "#{@snow_summit.name} - #{@snow_summit.created_at}",
         "#{@bear_mountain.name} - #{@bear_mountain.created_at}"
       ]
-      
+
       expect(actual).to eq(expected)
     end
   end
