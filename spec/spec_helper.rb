@@ -105,6 +105,7 @@ def mammoth_test_seed
   @nick = @mammoth.guests.create!(name: "Nick", pass_holder: true, days_active: 20)
   @megan = @mammoth.guests.create!(name: "Megan", pass_holder: true, days_active: 10)
   @brian = @mammoth.guests.create!(name: "Brian", pass_holder: false, days_active: 15)
+  @tina = @mammoth.guests.create!(name: "Tina", pass_holder: false, days_active: 12)
 end
 
 def snow_summit_test_seed
@@ -116,6 +117,7 @@ def snow_summit_test_seed
     updated_at: 1.day.ago
   )
 
+  @nat = @snow_summit.guests.create!(name: "Nat", pass_holder: true, days_active: 30)
   @sal = @snow_summit.guests.create!(name: "Sal", pass_holder: true, days_active: 5)
   @ali = @snow_summit.guests.create!(name: "Ali", pass_holder: false, days_active: 10)
 end

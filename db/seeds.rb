@@ -32,7 +32,9 @@ bear_mountain = Resort.create!(
 mammoth.guests.create!(name: "Nick", pass_holder: true, days_active: 20)
 mammoth.guests.create!(name: "Megan", pass_holder: true, days_active: 10)
 mammoth.guests.create!(name: "Brian", pass_holder: false, days_active: 15)
+mammoth.guests.create!(name: "Tina", pass_holder: false, days_active: 12)
 
+snow_summit.guests.create!(name: "Nat", pass_holder: true, days_active: 30)
 snow_summit.guests.create!(name: "Sal", pass_holder: true, days_active: 5)
 snow_summit.guests.create!(name: "Ali", pass_holder: false, days_active: 10)
 
