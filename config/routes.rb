@@ -17,4 +17,6 @@ Rails.application.routes.draw do
 
   get "/guests", to: "guests#index"
   get "/guests/:id", to: "guests#show"
+  patch "/guests/:id", to: "guests#update"
+  get "/guests/:id/edit", to: "guests#edit"
 end

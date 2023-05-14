@@ -173,7 +173,7 @@ and I am redirected to the ResortGuests Index page where I can see the new guest
 
 &nbsp;
 
-[ ] done
+[x] done
 
 User Story 14, Guest Update
 
