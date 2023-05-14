@@ -63,7 +63,7 @@ Then I see each guest that is associated with that resort with each guest's attr
 
 &nbsp;
 
-[ ] done
+[x] done
 
 User Story 6, Resort Index sorted by Most Recently Created
 

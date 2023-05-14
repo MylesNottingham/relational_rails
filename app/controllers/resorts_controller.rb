@@ -1,6 +1,6 @@
 class ResortsController < ApplicationController
   def index
-    @resorts = Resort.all
+    @resorts = Resort.all.order(:created_at)
   end
 
   def show
