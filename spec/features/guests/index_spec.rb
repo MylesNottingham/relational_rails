@@ -2,7 +2,9 @@ require "rails_helper"
 
 RSpec.describe "Guest Index Page" do
   before :each do
-    test_seed
+    mammoth_test_seed
+    snow_summit_test_seed
+    bear_mountain_test_seed
     visit "/guests"
   end
 
@@ -14,6 +16,8 @@ RSpec.describe "Guest Index Page" do
     expect(page).to have_content(@nick.name)
     expect(page).to have_content(@megan.name)
     expect(page).to have_content(@brian.name)
+    expect(page).to have_content(@tina.name)
+    expect(page).to have_content(@nat.name)
     expect(page).to have_content(@sal.name)
     expect(page).to have_content(@ali.name)
     expect(page).to have_content(@mike.name)
@@ -24,6 +28,8 @@ RSpec.describe "Guest Index Page" do
     expect(page).to have_content("Pass Holder: #{@nick.pass_holder ? 'Yes' : 'No'}")
     expect(page).to have_content("Pass Holder: #{@megan.pass_holder ? 'Yes' : 'No'}")
     expect(page).to have_content("Pass Holder: #{@brian.pass_holder ? 'Yes' : 'No'}")
+    expect(page).to have_content("Pass Holder: #{@tina.pass_holder ? 'Yes' : 'No'}")
+    expect(page).to have_content("Pass Holder: #{@nat.pass_holder ? 'Yes' : 'No'}")
     expect(page).to have_content("Pass Holder: #{@sal.pass_holder ? 'Yes' : 'No'}")
     expect(page).to have_content("Pass Holder: #{@ali.pass_holder ? 'Yes' : 'No'}")
     expect(page).to have_content("Pass Holder: #{@mike.pass_holder ? 'Yes' : 'No'}")
@@ -34,6 +40,8 @@ RSpec.describe "Guest Index Page" do
     expect(page).to have_content("Days Active: #{@nick.days_active}")
     expect(page).to have_content("Days Active: #{@megan.days_active}")
     expect(page).to have_content("Days Active: #{@brian.days_active}")
+    expect(page).to have_content("Days Active: #{@tina.days_active}")
+    expect(page).to have_content("Days Active: #{@nat.days_active}")
     expect(page).to have_content("Days Active: #{@sal.days_active}")
     expect(page).to have_content("Days Active: #{@ali.days_active}")
     expect(page).to have_content("Days Active: #{@mike.days_active}")
@@ -44,6 +52,8 @@ RSpec.describe "Guest Index Page" do
     expect(page).to have_content("Resort ID: #{@nick.resort_id}")
     expect(page).to have_content("Resort ID: #{@megan.resort_id}")
     expect(page).to have_content("Resort ID: #{@brian.resort_id}")
+    expect(page).to have_content("Resort ID: #{@tina.resort_id}")
+    expect(page).to have_content("Resort ID: #{@nat.resort_id}")
     expect(page).to have_content("Resort ID: #{@sal.resort_id}")
     expect(page).to have_content("Resort ID: #{@ali.resort_id}")
     expect(page).to have_content("Resort ID: #{@mike.resort_id}")

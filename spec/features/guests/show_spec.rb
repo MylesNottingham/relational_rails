@@ -2,7 +2,9 @@ require "rails_helper"
 
 RSpec.describe "Guest Show Page" do
   before :each do
-    test_seed
+    mammoth_test_seed
+    snow_summit_test_seed
+    bear_mountain_test_seed
   end
 
   describe "Nick" do

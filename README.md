@@ -58,3 +58,26 @@ As a visitor
 When I visit '/resorts/:resort_id/guests'
 Then I see each guest that is associated with that resort with each guest's attributes
 (data from each column that is on the guest table)
+
+### ActiveRecord
+
+&nbsp;
+
+[x] done
+
+User Story 6, Resort Index sorted by Most Recently Created
+
+As a visitor
+When I visit the resort index,
+I see that records are ordered by most recently created first
+And next to each of the records I see when it was created
+
+&nbsp;
+
+[x] done
+
+User Story 7, Resort Guest Count
+
+As a visitor
+When I visit a resort's show page
+I see a count of the number of guests associated with this resort
