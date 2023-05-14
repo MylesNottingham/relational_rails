@@ -2,43 +2,42 @@ require "rails_helper"
 
 RSpec.describe "Resort Show Page" do
   before :each do
-    @snow_summit = Resort.create!(name: "Snow Summit", max_capacity: 600, open_for_season: true)
-    @bear_mountain = Resort.create!(name: "Bear Mountain", max_capacity: 500, open_for_season: false)
+    test_seed
   end
 
-  it "shows the name of a resort" do
-    visit "/resorts/#{@snow_summit.id}"
+  describe "Mammoth" do
+    before :each do
+      visit "/resorts/#{@mammoth.id}"
+    end
 
-    expect(page).to have_content(@snow_summit.name)
+    it "shows the resort attributes" do
+      expect(page).to have_content(@mammoth.name)
+      expect(page).to have_content("Max Capacity: #{@mammoth.max_capacity}")
+      expect(page).to have_content("Open for Season: #{@mammoth.open_for_season ? 'Yes' : 'No'}")
+    end
   end
 
-  it "shows the name of another resort" do
-    visit "/resorts/#{@bear_mountain.id}"
+  describe "Snow Summit" do
+    before :each do
+      visit "/resorts/#{@snow_summit.id}"
+    end
 
-    expect(page).to have_content(@bear_mountain.name)
+    it "shows the resort attributes" do
+      expect(page).to have_content(@snow_summit.name)
+      expect(page).to have_content("Max Capacity: #{@snow_summit.max_capacity}")
+      expect(page).to have_content("Open for Season: #{@snow_summit.open_for_season ? 'Yes' : 'No'}")
+    end
   end
 
-  it "shows the max capacity of a resort" do
-    visit "/resorts/#{@snow_summit.id}"
+  describe "Bear Mountain" do
+    before :each do
+      visit "/resorts/#{@bear_mountain.id}"
+    end
 
-    expect(page).to have_content(@snow_summit.max_capacity)
-  end
-
-  it "shows the max capacity of another resort" do
-    visit "/resorts/#{@bear_mountain.id}"
-
-    expect(page).to have_content(@bear_mountain.max_capacity)
-  end
-
-  it "shows if a resort is open for the season" do
-    visit "/resorts/#{@snow_summit.id}"
-
-    expect(page).to have_content(@snow_summit.open_for_season ? "Yes" : "No")
-  end
-
-  it "shows if another resort is open for the season" do
-    visit "/resorts/#{@bear_mountain.id}"
-
-    expect(page).to have_content(@bear_mountain.open_for_season ? "Yes" : "No")
+    it "shows the resort attributes" do
+      expect(page).to have_content(@bear_mountain.name)
+      expect(page).to have_content("Max Capacity: #{@bear_mountain.max_capacity}")
+      expect(page).to have_content("Open for Season: #{@bear_mountain.open_for_season ? 'Yes' : 'No'}")
+    end
   end
 end
