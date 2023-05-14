@@ -30,6 +30,12 @@ RSpec.describe "Resort Show Page" do
         click_link "Mammoth Guests"
         expect(current_path).to eq("/resorts/#{@mammoth.id}/guests")
       end
+
+      it "shows link to update resort" do
+        expect(page).to have_link("Update Resort")
+        click_link "Update Resort"
+        expect(current_path).to eq("/resorts/#{@mammoth.id}/edit")
+      end
     end
 
     describe "body" do
@@ -65,6 +71,12 @@ RSpec.describe "Resort Show Page" do
         click_link "Snow Summit Guests"
         expect(current_path).to eq("/resorts/#{@snow_summit.id}/guests")
       end
+
+      it "shows link to update resort" do
+        expect(page).to have_link("Update Resort")
+        click_link "Update Resort"
+        expect(current_path).to eq("/resorts/#{@snow_summit.id}/edit")
+      end
     end
 
     describe "body" do
@@ -99,6 +111,12 @@ RSpec.describe "Resort Show Page" do
         expect(page).to have_link("#{@bear_mountain.name} Guests")
         click_link "Bear Mountain Guests"
         expect(current_path).to eq("/resorts/#{@bear_mountain.id}/guests")
+      end
+
+      it "shows link to update resort" do
+        expect(page).to have_link("Update Resort")
+        click_link "Update Resort"
+        expect(current_path).to eq("/resorts/#{@bear_mountain.id}/edit")
       end
     end
 

@@ -24,6 +24,12 @@ RSpec.describe "Guest Show Page" do
         click_link "All Resorts"
         expect(current_path).to eq("/resorts")
       end
+
+      it "shows link to update guest" do
+        expect(page).to have_link("Update Guest")
+        click_link "Update Guest"
+        expect(current_path).to eq("/guests/#{@nick.id}/edit")
+      end
     end
 
     describe "body" do
