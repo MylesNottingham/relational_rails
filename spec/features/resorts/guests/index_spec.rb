@@ -12,34 +12,50 @@ RSpec.describe "Resorts Guests Index Page" do
       visit "/resorts/#{@mammoth.id}/guests"
     end
 
-    it "shows the title of the page" do
-      expect(page).to have_content("#{@mammoth.name} Guests")
+    describe "links" do
+      it "shows link to All Guests" do
+        expect(page).to have_link("All Guests")
+        click_link "All Guests"
+        expect(current_path).to eq("/guests")
+      end
+
+      it "shows link to All Resorts" do
+        expect(page).to have_link("All Resorts")
+        click_link "All Resorts"
+        expect(current_path).to eq("/resorts")
+      end
     end
 
-    it "shows the names of all guests" do
-      expect(page).to have_content(@nick.name)
-      expect(page).to have_content(@megan.name)
-      expect(page).to have_content(@brian.name)
-      expect(page).to have_content(@tina.name)
-      expect(page).to_not have_content(@nat.name)
-      expect(page).to_not have_content(@sal.name)
-      expect(page).to_not have_content(@ali.name)
-      expect(page).to_not have_content(@mike.name)
-      expect(page).to_not have_content(@molly.name)
-    end
+    describe "body" do
+      it "shows the title of the page" do
+        expect(page).to have_content("#{@mammoth.name} Guests")
+      end
 
-    it "shows if each guest is a pass holder" do
-      expect(page).to have_content("Pass Holder: #{@nick.pass_holder ? 'Yes' : 'No'}")
-      expect(page).to have_content("Pass Holder: #{@megan.pass_holder ? 'Yes' : 'No'}")
-      expect(page).to have_content("Pass Holder: #{@brian.pass_holder ? 'Yes' : 'No'}")
-      expect(page).to have_content("Pass Holder: #{@tina.pass_holder ? 'Yes' : 'No'}")
-    end
+      it "shows the names of all guests" do
+        expect(page).to have_content(@nick.name)
+        expect(page).to have_content(@megan.name)
+        expect(page).to have_content(@brian.name)
+        expect(page).to have_content(@tina.name)
+        expect(page).to_not have_content(@nat.name)
+        expect(page).to_not have_content(@sal.name)
+        expect(page).to_not have_content(@ali.name)
+        expect(page).to_not have_content(@mike.name)
+        expect(page).to_not have_content(@molly.name)
+      end
 
-    it "shows the number of days each guest has been active" do
-      expect(page).to have_content("Days Active: #{@nick.days_active}")
-      expect(page).to have_content("Days Active: #{@megan.days_active}")
-      expect(page).to have_content("Days Active: #{@brian.days_active}")
-      expect(page).to have_content("Days Active: #{@tina.days_active}")
+      it "shows if each guest is a pass holder" do
+        expect(page).to have_content("Pass Holder: #{@nick.pass_holder ? 'Yes' : 'No'}")
+        expect(page).to have_content("Pass Holder: #{@megan.pass_holder ? 'Yes' : 'No'}")
+        expect(page).to have_content("Pass Holder: #{@brian.pass_holder ? 'Yes' : 'No'}")
+        expect(page).to have_content("Pass Holder: #{@tina.pass_holder ? 'Yes' : 'No'}")
+      end
+
+      it "shows the number of days each guest has been active" do
+        expect(page).to have_content("Days Active: #{@nick.days_active}")
+        expect(page).to have_content("Days Active: #{@megan.days_active}")
+        expect(page).to have_content("Days Active: #{@brian.days_active}")
+        expect(page).to have_content("Days Active: #{@tina.days_active}")
+      end
     end
   end
 
@@ -48,32 +64,48 @@ RSpec.describe "Resorts Guests Index Page" do
       visit "/resorts/#{@snow_summit.id}/guests"
     end
 
-    it "shows the title of the page" do
-      expect(page).to have_content("#{@snow_summit.name} Guests")
+    describe "links" do
+      it "shows link to All Guests" do
+        expect(page).to have_link("All Guests")
+        click_link "All Guests"
+        expect(current_path).to eq("/guests")
+      end
+
+      it "shows link to All Resorts" do
+        expect(page).to have_link("All Resorts")
+        click_link "All Resorts"
+        expect(current_path).to eq("/resorts")
+      end
     end
 
-    it "shows the names of all guests" do
-      expect(page).to_not have_content(@nick.name)
-      expect(page).to_not have_content(@megan.name)
-      expect(page).to_not have_content(@brian.name)
-      expect(page).to_not have_content(@tina.name)
-      expect(page).to have_content(@nat.name)
-      expect(page).to have_content(@sal.name)
-      expect(page).to have_content(@ali.name)
-      expect(page).to_not have_content(@mike.name)
-      expect(page).to_not have_content(@molly.name)
-    end
+    describe "body" do
+      it "shows the title of the page" do
+        expect(page).to have_content("#{@snow_summit.name} Guests")
+      end
 
-    it "shows if each guest is a pass holder" do
-      expect(page).to have_content("Pass Holder: #{@nat.pass_holder ? 'Yes' : 'No'}")
-      expect(page).to have_content("Pass Holder: #{@sal.pass_holder ? 'Yes' : 'No'}")
-      expect(page).to have_content("Pass Holder: #{@ali.pass_holder ? 'Yes' : 'No'}")
-    end
+      it "shows the names of all guests" do
+        expect(page).to_not have_content(@nick.name)
+        expect(page).to_not have_content(@megan.name)
+        expect(page).to_not have_content(@brian.name)
+        expect(page).to_not have_content(@tina.name)
+        expect(page).to have_content(@nat.name)
+        expect(page).to have_content(@sal.name)
+        expect(page).to have_content(@ali.name)
+        expect(page).to_not have_content(@mike.name)
+        expect(page).to_not have_content(@molly.name)
+      end
 
-    it "shows the number of days each guest has been active" do
-      expect(page).to have_content("Days Active: #{@nat.days_active}")
-      expect(page).to have_content("Days Active: #{@sal.days_active}")
-      expect(page).to have_content("Days Active: #{@ali.days_active}")
+      it "shows if each guest is a pass holder" do
+        expect(page).to have_content("Pass Holder: #{@nat.pass_holder ? 'Yes' : 'No'}")
+        expect(page).to have_content("Pass Holder: #{@sal.pass_holder ? 'Yes' : 'No'}")
+        expect(page).to have_content("Pass Holder: #{@ali.pass_holder ? 'Yes' : 'No'}")
+      end
+
+      it "shows the number of days each guest has been active" do
+        expect(page).to have_content("Days Active: #{@nat.days_active}")
+        expect(page).to have_content("Days Active: #{@sal.days_active}")
+        expect(page).to have_content("Days Active: #{@ali.days_active}")
+      end
     end
   end
 
@@ -82,30 +114,46 @@ RSpec.describe "Resorts Guests Index Page" do
       visit "/resorts/#{@bear_mountain.id}/guests"
     end
 
-    it "shows the title of the page" do
-      expect(page).to have_content("#{@bear_mountain.name} Guests")
+    describe "links" do
+      it "shows link to All Guests" do
+        expect(page).to have_link("All Guests")
+        click_link "All Guests"
+        expect(current_path).to eq("/guests")
+      end
+
+      it "shows link to All Resorts" do
+        expect(page).to have_link("All Resorts")
+        click_link "All Resorts"
+        expect(current_path).to eq("/resorts")
+      end
     end
 
-    it "shows the names of all guests" do
-      expect(page).to_not have_content(@nick.name)
-      expect(page).to_not have_content(@megan.name)
-      expect(page).to_not have_content(@brian.name)
-      expect(page).to_not have_content(@tina.name)
-      expect(page).to_not have_content(@nat.name)
-      expect(page).to_not have_content(@sal.name)
-      expect(page).to_not have_content(@ali.name)
-      expect(page).to have_content(@mike.name)
-      expect(page).to have_content(@molly.name)
-    end
+    describe "body" do
+      it "shows the title of the page" do
+        expect(page).to have_content("#{@bear_mountain.name} Guests")
+      end
 
-    it "shows if each guest is a pass holder" do
-      expect(page).to have_content("Pass Holder: #{@mike.pass_holder ? 'Yes' : 'No'}")
-      expect(page).to have_content("Pass Holder: #{@molly.pass_holder ? 'Yes' : 'No'}")
-    end
+      it "shows the names of all guests" do
+        expect(page).to_not have_content(@nick.name)
+        expect(page).to_not have_content(@megan.name)
+        expect(page).to_not have_content(@brian.name)
+        expect(page).to_not have_content(@tina.name)
+        expect(page).to_not have_content(@nat.name)
+        expect(page).to_not have_content(@sal.name)
+        expect(page).to_not have_content(@ali.name)
+        expect(page).to have_content(@mike.name)
+        expect(page).to have_content(@molly.name)
+      end
 
-    it "shows the number of days each guest has been active" do
-      expect(page).to have_content("Days Active: #{@mike.days_active}")
-      expect(page).to have_content("Days Active: #{@molly.days_active}")
+      it "shows if each guest is a pass holder" do
+        expect(page).to have_content("Pass Holder: #{@mike.pass_holder ? 'Yes' : 'No'}")
+        expect(page).to have_content("Pass Holder: #{@molly.pass_holder ? 'Yes' : 'No'}")
+      end
+
+      it "shows the number of days each guest has been active" do
+        expect(page).to have_content("Days Active: #{@mike.days_active}")
+        expect(page).to have_content("Days Active: #{@molly.days_active}")
+      end
     end
   end
 end

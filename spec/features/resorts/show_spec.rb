@@ -12,11 +12,33 @@ RSpec.describe "Resort Show Page" do
       visit "/resorts/#{@mammoth.id}"
     end
 
-    it "shows the resort attributes" do
-      expect(page).to have_content(@mammoth.name)
-      expect(page).to have_content("Current Guest Count: #{@mammoth.guests.count}")
-      expect(page).to have_content("Max Capacity: #{@mammoth.max_capacity}")
-      expect(page).to have_content("Open for Season: #{@mammoth.open_for_season ? 'Yes' : 'No'}")
+    describe "links" do
+      it "shows link to All Guests" do
+        expect(page).to have_link("All Guests")
+        click_link "All Guests"
+        expect(current_path).to eq("/guests")
+      end
+
+      it "shows link to All Resorts" do
+        expect(page).to have_link("All Resorts")
+        click_link "All Resorts"
+        expect(current_path).to eq("/resorts")
+      end
+
+      it "shows link to Mammoth Guests" do
+        expect(page).to have_link("#{@mammoth.name} Guests")
+        click_link "Mammoth Guests"
+        expect(current_path).to eq("/resorts/#{@mammoth.id}/guests")
+      end
+    end
+
+    describe "body" do
+      it "shows the resort attributes" do
+        expect(page).to have_content(@mammoth.name)
+        expect(page).to have_content("Guest Count: #{@mammoth.guests.count}")
+        expect(page).to have_content("Max Capacity: #{@mammoth.max_capacity}")
+        expect(page).to have_content("Open for Season: #{@mammoth.open_for_season ? 'Yes' : 'No'}")
+      end
     end
   end
 
@@ -25,11 +47,33 @@ RSpec.describe "Resort Show Page" do
       visit "/resorts/#{@snow_summit.id}"
     end
 
-    it "shows the resort attributes" do
-      expect(page).to have_content(@snow_summit.name)
-      expect(page).to have_content("Current Guest Count: #{@snow_summit.guests.count}")
-      expect(page).to have_content("Max Capacity: #{@snow_summit.max_capacity}")
-      expect(page).to have_content("Open for Season: #{@snow_summit.open_for_season ? 'Yes' : 'No'}")
+    describe "links" do
+      it "shows link to All Guests" do
+        expect(page).to have_link("All Guests")
+        click_link "All Guests"
+        expect(current_path).to eq("/guests")
+      end
+
+      it "shows link to All Resorts" do
+        expect(page).to have_link("All Resorts")
+        click_link "All Resorts"
+        expect(current_path).to eq("/resorts")
+      end
+
+      it "shows link to Snow Summit Guests" do
+        expect(page).to have_link("#{@snow_summit.name} Guests")
+        click_link "Snow Summit Guests"
+        expect(current_path).to eq("/resorts/#{@snow_summit.id}/guests")
+      end
+    end
+
+    describe "body" do
+      it "shows the resort attributes" do
+        expect(page).to have_content(@snow_summit.name)
+        expect(page).to have_content("Guest Count: #{@snow_summit.guests.count}")
+        expect(page).to have_content("Max Capacity: #{@snow_summit.max_capacity}")
+        expect(page).to have_content("Open for Season: #{@snow_summit.open_for_season ? 'Yes' : 'No'}")
+      end
     end
   end
 
@@ -38,11 +82,33 @@ RSpec.describe "Resort Show Page" do
       visit "/resorts/#{@bear_mountain.id}"
     end
 
-    it "shows the resort attributes" do
-      expect(page).to have_content(@bear_mountain.name)
-      expect(page).to have_content("Current Guest Count: #{@bear_mountain.guests.count}")
-      expect(page).to have_content("Max Capacity: #{@bear_mountain.max_capacity}")
-      expect(page).to have_content("Open for Season: #{@bear_mountain.open_for_season ? 'Yes' : 'No'}")
+    describe "links" do
+      it "shows link to All Guests" do
+        expect(page).to have_link("All Guests")
+        click_link "All Guests"
+        expect(current_path).to eq("/guests")
+      end
+
+      it "shows link to All Resorts" do
+        expect(page).to have_link("All Resorts")
+        click_link "All Resorts"
+        expect(current_path).to eq("/resorts")
+      end
+
+      it "shows link to Bear Mountain Guests" do
+        expect(page).to have_link("#{@bear_mountain.name} Guests")
+        click_link "Bear Mountain Guests"
+        expect(current_path).to eq("/resorts/#{@bear_mountain.id}/guests")
+      end
+    end
+
+    describe "body" do
+      it "shows the resort attributes" do
+        expect(page).to have_content(@bear_mountain.name)
+        expect(page).to have_content("Guest Count: #{@bear_mountain.guests.count}")
+        expect(page).to have_content("Max Capacity: #{@bear_mountain.max_capacity}")
+        expect(page).to have_content("Open for Season: #{@bear_mountain.open_for_season ? 'Yes' : 'No'}")
+      end
     end
   end
 end
