@@ -20,6 +20,12 @@ RSpec.describe "Resort Index Page" do
       click_link "All Resorts"
       expect(current_path).to eq("/resorts")
     end
+
+    it "shows link to create New Resort" do
+      expect(page).to have_link("New Resort")
+      click_link "New Resort"
+      expect(current_path).to eq("/resorts/new")
+    end
   end
 
   describe "Body" do

@@ -52,11 +52,11 @@ Then I see the guest with that id including the guest's attributes
 
 [x] done
 
-User Story 5, Resorts Guests Index
+User Story 5, ResortGuests Index
 
 As a visitor
 When I visit '/resorts/:resort_id/guests'
-Then I see each guest that is associated with that resort with each guest's attributes
+Then I see each guest that is associated with that resort and their attributes
 (data from each column that is on the guest table)
 
 ### ActiveRecord
@@ -68,18 +68,18 @@ Then I see each guest that is associated with that resort with each guest's attr
 User Story 6, Resort Index sorted by Most Recently Created
 
 As a visitor
-When I visit the resort index,
-I see that records are ordered by most recently created first
+When I visit the Resort Index,
+I see that records are ordered by most-recently-created first
 And next to each of the records I see when it was created
 
 &nbsp;
 
 [x] done
 
-User Story 7, Resort Guest Count
+User Story 7, ResortGuest Count
 
 As a visitor
-When I visit a resort's show page
+When I visit a Resort's Show page
 I see a count of the number of guests associated with this resort
 
 ### Usability
@@ -108,8 +108,83 @@ Then I see a link at the top of the page that takes me to the Resort Index
 
 [x] done
 
-User Story 10, ResortGuest Index Link
+User Story 10, ResortGuests Index Link
 
 As a visitor
-When I visit a Resort show page ('/resorts/:id')
+When I visit a Resort Show page ('/resorts/:id')
 Then I see a link to take me to that resort's `guests_index` page ('/resorts/:id/guests')
+
+&nbsp;
+
+## Iteration 2
+
+### CRUD 2
+
+&nbsp;
+
+[x] done
+
+User Story 11, Resort Creation
+
+As a visitor
+When I visit the Resorts Index page
+Then I see a link to create a new resort record, "New Resort"
+When I click this link
+Then I am taken to '/resorts/new' where I see a form for a new resort record
+When I fill out the form with a new resort's attributes:
+And I click the button "Create Resort" to submit the form
+Then a `POST` request is sent to the '/resorts' route,
+a new resort record is created,
+and I am redirected to the Resort Index page where I see the new resort displayed.
+
+&nbsp;
+
+[ ] done
+
+User Story 12, Resort Update
+
+As a visitor
+When I visit a Resort Show page
+Then I see a link to update the resort "Update Resort"
+When I click the link "Update Resort"
+Then I am taken to '/resorts/:id/edit' where I see a form to edit the resort's attributes:
+When I fill out the form with updated information
+And I click the button to submit the form
+Then a `PATCH` request is sent to '/resorts/:id',
+the resort's info is updated,
+and I am redirected to the Resort Show page where I see the resort's updated info
+
+&nbsp;
+
+[ ] done
+
+User Story 13, ResortGuest Creation
+
+As a visitor
+When I visit a ResortGuests Index page
+Then I see a link to add a new guest to that resort "Create Guest"
+When I click the link
+I am taken to '/resorts/:resort_id/guests/new' where I see a form to add a new guest
+When I fill in the form with the guest's attributes:
+And I click the button "Create Guest"
+Then a `POST` request is sent to '/resorts/:resort_id/guests',
+a new guest object/row is created for that resort,
+and I am redirected to the ResortGuests Index page where I can see the new guest listed
+
+&nbsp;
+
+[ ] done
+
+User Story 14, Guest Update
+
+As a visitor
+When I visit a Guest Show page
+Then I see a link to update that guest "Update Guest"
+When I click the link
+I am taken to '/guests/:id/edit' where I see a form to edit the guest's attributes:
+When I click the button to submit the form "Update Guest"
+Then a `PATCH` request is sent to '/guests/:id',
+the guest's data is updated,
+and I am redirected to the Guest Show page where I see the guest's updated information
+
+&nbsp;
