@@ -1,0 +1,7 @@
+<h1><%= @resort.name %> Guests</h1>
+
+<% @guests.each do |guest| %>
+  <h3><%= guest.name %></h3>
+  <p>Pass Holder: <%= guest.pass_holder ? "Yes" : "No" %></p>
+  <p>Days Active: <%= guest.days_active %></p>
+<% end %>
