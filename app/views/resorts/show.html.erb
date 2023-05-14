@@ -1,4 +1,9 @@
+<%= link_to "All Guests", "/guests" %>
+<%= link_to "All Resorts", "/resorts" %>
+<%= link_to "#{@resort.name} Guests", "/resorts/#{@resort.id}/guests" %>
+
+
 <h1><%= @resort.name %></h1>
-<h3>Current Guest Count: <%= @guest_count %></h3>
+<h3>Guest Count: <%= @guest_count %></h3>
 <h3>Max Capacity: <%= @resort.max_capacity %></h3>
 <h3>Open for Season: <%= @resort.open_for_season ? "Yes" : "No" %></h3>

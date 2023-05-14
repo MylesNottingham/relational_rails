@@ -81,3 +81,35 @@ User Story 7, Resort Guest Count
 As a visitor
 When I visit a resort's show page
 I see a count of the number of guests associated with this resort
+
+### Usability
+
+&nbsp;
+
+[x] done
+
+User Story 8, Guest Index Link
+
+As a visitor
+When I visit any page on the site
+Then I see a link at the top of the page that takes me to the Guest Index
+
+&nbsp;
+
+[x] done
+
+User Story 9, Resort Index Link
+
+As a visitor
+When I visit any page on the site
+Then I see a link at the top of the page that takes me to the Resort Index
+
+&nbsp;
+
+[x] done
+
+User Story 10, ResortGuest Index Link
+
+As a visitor
+When I visit a Resort show page ('/resorts/:id')
+Then I see a link to take me to that resort's `guests_index` page ('/resorts/:id/guests')

@@ -8,16 +8,32 @@ RSpec.describe "Resort Index Page" do
     visit "/resorts"
   end
 
-  it "shows the title of the page" do
-    expect(page).to have_content("All Resorts")
+  describe "links" do
+    it "shows link to All Guests" do
+      expect(page).to have_link("All Guests")
+      click_link "All Guests"
+      expect(current_path).to eq("/guests")
+    end
+
+    it "shows link to All Resorts" do
+      expect(page).to have_link("All Resorts")
+      click_link "All Resorts"
+      expect(current_path).to eq("/resorts")
+    end
   end
 
-  it "shows names of all resorts with creation date ordered by creation timestamp" do
-    expect(page).to have_content(
-      "#{@mammoth.name} - #{@mammoth.created_at}\n#{@snow_summit.name} - #{@snow_summit.created_at}"
-    )
-    expect(page).to have_content(
-      "#{@snow_summit.name} - #{@snow_summit.created_at}\n#{@bear_mountain.name} - #{@bear_mountain.created_at}"
-    )
+  describe "Body" do
+    it "shows the title of the page" do
+      expect(page).to have_content("All Resorts")
+    end
+
+    it "shows names of all resorts with creation date ordered by creation timestamp" do
+      expect(page).to have_content(
+        "#{@mammoth.name} - #{@mammoth.created_at}\n#{@snow_summit.name} - #{@snow_summit.created_at}"
+      )
+      expect(page).to have_content(
+        "#{@snow_summit.name} - #{@snow_summit.created_at}\n#{@bear_mountain.name} - #{@bear_mountain.created_at}"
+      )
+    end
   end
 end
