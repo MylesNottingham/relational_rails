@@ -205,12 +205,12 @@ Then I only see records where the boolean column is `true`
 
 [ ] done
 
-User Story 16, Sort Parent's Children in Alphabetical Order by name
+User Story 16, Sort Resort's Guests in Alphabetical Order by name
 
 As a visitor
-When I visit the Parent's children Index Page
-Then I see a link to sort children in alphabetical order
+When I visit the Resort's Guests Index Page
+Then I see a link to sort guests in alphabetical order
 When I click on the link
-I'm taken back to the Parent's children Index Page where I see all of the parent's children in alphabetical order
+I'm taken back to the Resort's Guest Index Page where I see all of the resort's guests in alphabetical order
 
 &nbsp;

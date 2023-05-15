@@ -9,4 +9,5 @@
   <p>Days Active: <%= guest.days_active %></p>
 <% end %>
 
-<%= link_to "Add New Guest", "/resorts/#{@resort.id}/guests/new" %>
+<%= link_to "Add New Guest", "/resorts/#{@resort.id}/guests/new" %><br/><br/>
+<%= link_to "Sort by Name", "/resorts/#{@resort.id}/guests/sort" %>

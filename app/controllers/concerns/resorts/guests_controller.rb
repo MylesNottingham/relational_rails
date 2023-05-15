@@ -18,4 +18,10 @@ class Resorts::GuestsController < ApplicationController
     guest.save
     redirect_to "/resorts/#{guest.resort_id}/guests"
   end
+
+  def sort
+    @resort = Resort.find(params[:id])
+    @guests = @resort.guests.order(:name)
+    render :index
+  end
 end
