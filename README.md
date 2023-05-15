@@ -214,3 +214,31 @@ When I click on the link
 I'm taken back to the Resort's Guest Index Page where I see all of the resort's guests in alphabetical order
 
 &nbsp;
+
+### Usability 2
+
+&nbsp;
+
+[ ] done
+
+User Story 17, Resort Update From Resort Index Page
+
+As a visitor
+When I visit the Resort Index page
+Next to every resort, I see a link to edit that resort's info
+When I click the link
+I should be taken to that resort's edit page where I can update its information just like in User Story 12
+
+&nbsp;
+
+[ ] done
+
+User Story 18, Guest Update From Guests Index Page
+
+As a visitor
+When I visit the Guest Index page or a ResortGuest Index page
+Next to every guest, I see a link to edit that guest's info
+When I click the link
+I should be taken to that guest's edit page where I can update its information just like in User Story 14
+
+&nbsp;
