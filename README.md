@@ -112,7 +112,7 @@ User Story 10, ResortGuests Index Link
 
 As a visitor
 When I visit a Resort Show page ('/resorts/:id')
-Then I see a link to take me to that resort's `guests_index` page ('/resorts/:id/guests')
+Then I see a link to take me to that Resort's Guests Index page ('/resorts/:id/guests')
 
 &nbsp;
 
