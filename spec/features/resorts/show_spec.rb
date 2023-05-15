@@ -13,17 +13,8 @@ RSpec.describe "Resort Show Page" do
     end
 
     describe "links" do
-      it "shows link to All Guests" do
-        expect(page).to have_link("All Guests")
-        click_link "All Guests"
-        expect(current_path).to eq("/guests")
-      end
-
-      it "shows link to All Resorts" do
-        expect(page).to have_link("All Resorts")
-        click_link "All Resorts"
-        expect(current_path).to eq("/resorts")
-      end
+      test_for_link_to_guest_index
+      test_for_link_to_resort_index
 
       it "shows link to Mammoth Guests" do
         expect(page).to have_link("#{@mammoth.name} Guests")
@@ -54,17 +45,8 @@ RSpec.describe "Resort Show Page" do
     end
 
     describe "links" do
-      it "shows link to All Guests" do
-        expect(page).to have_link("All Guests")
-        click_link "All Guests"
-        expect(current_path).to eq("/guests")
-      end
-
-      it "shows link to All Resorts" do
-        expect(page).to have_link("All Resorts")
-        click_link "All Resorts"
-        expect(current_path).to eq("/resorts")
-      end
+      test_for_link_to_guest_index
+      test_for_link_to_resort_index
 
       it "shows link to Snow Summit Guests" do
         expect(page).to have_link("#{@snow_summit.name} Guests")
@@ -95,17 +77,8 @@ RSpec.describe "Resort Show Page" do
     end
 
     describe "links" do
-      it "shows link to All Guests" do
-        expect(page).to have_link("All Guests")
-        click_link "All Guests"
-        expect(current_path).to eq("/guests")
-      end
-
-      it "shows link to All Resorts" do
-        expect(page).to have_link("All Resorts")
-        click_link "All Resorts"
-        expect(current_path).to eq("/resorts")
-      end
+      test_for_link_to_guest_index
+      test_for_link_to_resort_index
 
       it "shows link to Bear Mountain Guests" do
         expect(page).to have_link("#{@bear_mountain.name} Guests")

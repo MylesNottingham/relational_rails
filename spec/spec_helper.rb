@@ -132,3 +132,19 @@ def bear_mountain_test_seed
   @mike = @bear_mountain.guests.create!(name: "Mike", pass_holder: true, days_active: 5)
   @molly = @bear_mountain.guests.create!(name: "Molly", pass_holder: false, days_active: 10)
 end
+
+def test_for_link_to_guest_index
+  it "shows link to All Pass Holding Guests" do
+    expect(page).to have_link("All Pass Holding Guests")
+    click_link "All Pass Holding Guests"
+    expect(current_path).to eq("/guests")
+  end
+end
+
+def test_for_link_to_resort_index
+  it "shows link to All Resorts" do
+    expect(page).to have_link("All Resorts")
+    click_link "All Resorts"
+    expect(current_path).to eq("/resorts")
+  end
+end
