@@ -129,8 +129,8 @@ def bear_mountain_test_seed
     open_for_season: false
   )
 
-  @mike = @bear_mountain.guests.create!(name: "Mike", pass_holder: true, days_active: 5)
   @molly = @bear_mountain.guests.create!(name: "Molly", pass_holder: false, days_active: 10)
+  @mike = @bear_mountain.guests.create!(name: "Mike", pass_holder: true, days_active: 5)
 end
 
 def test_for_link_to_guest_index

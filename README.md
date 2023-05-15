@@ -203,7 +203,7 @@ Then I only see records where the boolean column is `true`
 
 &nbsp;
 
-[ ] done
+[x] done
 
 User Story 16, Sort Resort's Guests in Alphabetical Order by name
 
