@@ -1,6 +1,6 @@
 class GuestsController < ApplicationController
   def index
-    @guests = Guest.all
+    @guests = Guest.where(pass_holder: true)
   end
 
   def show

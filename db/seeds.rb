@@ -38,5 +38,5 @@ snow_summit.guests.create!(name: "Nat", pass_holder: true, days_active: 30)
 snow_summit.guests.create!(name: "Sal", pass_holder: true, days_active: 5)
 snow_summit.guests.create!(name: "Ali", pass_holder: false, days_active: 10)
 
-bear_mountain.guests.create!(name: "Mike", pass_holder: true, days_active: 5)
 bear_mountain.guests.create!(name: "Molly", pass_holder: false, days_active: 10)
+bear_mountain.guests.create!(name: "Mike", pass_holder: true, days_active: 5)

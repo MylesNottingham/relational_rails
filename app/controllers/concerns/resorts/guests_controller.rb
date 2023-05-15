@@ -1,7 +1,7 @@
 class Resorts::GuestsController < ApplicationController
   def index
     @resort = Resort.find(params[:id])
-    @guests = @resort.guests
+    @guests = params[:sorted] == "true" ? @resort.guests.order(:name) : @resort.guests
   end
 
   def new; end

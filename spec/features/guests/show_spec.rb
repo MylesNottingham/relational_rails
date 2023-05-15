@@ -13,17 +13,8 @@ RSpec.describe "Guest Show Page" do
     end
 
     describe "links" do
-      it "shows link to All Guests" do
-        expect(page).to have_link("All Guests")
-        click_link "All Guests"
-        expect(current_path).to eq("/guests")
-      end
-
-      it "shows link to All Resorts" do
-        expect(page).to have_link("All Resorts")
-        click_link "All Resorts"
-        expect(current_path).to eq("/resorts")
-      end
+      test_for_link_to_guest_index
+      test_for_link_to_resort_index
 
       it "shows link to update guest" do
         expect(page).to have_link("Update Guest")
@@ -48,16 +39,13 @@ RSpec.describe "Guest Show Page" do
     end
 
     describe "links" do
-      it "shows link to All Guests" do
-        expect(page).to have_link("All Guests")
-        click_link "All Guests"
-        expect(current_path).to eq("/guests")
-      end
+      test_for_link_to_guest_index
+      test_for_link_to_resort_index
 
-      it "shows link to All Resorts" do
-        expect(page).to have_link("All Resorts")
-        click_link "All Resorts"
-        expect(current_path).to eq("/resorts")
+      it "shows link to update guest" do
+        expect(page).to have_link("Update Guest")
+        click_link "Update Guest"
+        expect(current_path).to eq("/guests/#{@sal.id}/edit")
       end
     end
 
@@ -77,16 +65,13 @@ RSpec.describe "Guest Show Page" do
     end
 
     describe "links" do
-      it "shows link to All Guests" do
-        expect(page).to have_link("All Guests")
-        click_link "All Guests"
-        expect(current_path).to eq("/guests")
-      end
+      test_for_link_to_guest_index
+      test_for_link_to_resort_index
 
-      it "shows link to All Resorts" do
-        expect(page).to have_link("All Resorts")
-        click_link "All Resorts"
-        expect(current_path).to eq("/resorts")
+      it "shows link to update guest" do
+        expect(page).to have_link("Update Guest")
+        click_link "Update Guest"
+        expect(current_path).to eq("/guests/#{@mike.id}/edit")
       end
     end
 

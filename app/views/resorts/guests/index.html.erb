@@ -1,4 +1,4 @@
-<%= link_to "All Guests", "/guests" %>
+<%= link_to "All Pass Holding Guests", "/guests" %>
 <%= link_to "All Resorts", "/resorts" %>
 
 <h1><%= @resort.name %> Guests</h1>
@@ -9,4 +9,5 @@
   <p>Days Active: <%= guest.days_active %></p>
 <% end %>
 
-<%= link_to "Add New Guest", "/resorts/#{@resort.id}/guests/new" %>
+<%= link_to "Add New Guest", "/resorts/#{@resort.id}/guests/new" %><br/><br/>
+<%= link_to "Sort by Name", "/resorts/#{@resort.id}/guests?sorted=true" %>

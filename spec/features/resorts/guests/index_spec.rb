@@ -13,22 +13,21 @@ RSpec.describe "Resorts Guests Index Page" do
     end
 
     describe "links" do
-      it "shows link to All Guests" do
-        expect(page).to have_link("All Guests")
-        click_link "All Guests"
-        expect(current_path).to eq("/guests")
-      end
-
-      it "shows link to All Resorts" do
-        expect(page).to have_link("All Resorts")
-        click_link "All Resorts"
-        expect(current_path).to eq("/resorts")
-      end
+      test_for_link_to_guest_index
+      test_for_link_to_resort_index
 
       it "shows link to add a new guest" do
         expect(page).to have_link("Add New Guest")
         click_link "Add New Guest"
         expect(current_path).to eq("/resorts/#{@mammoth.id}/guests/new")
+      end
+
+      it "shows link to sort guests by name" do
+        expect(page).to have_link("Sort by Name")
+
+        click_link "Sort by Name"
+
+        expect(current_path).to eq("/resorts/#{@mammoth.id}/guests")
       end
     end
 
@@ -62,6 +61,20 @@ RSpec.describe "Resorts Guests Index Page" do
         expect(page).to have_content("Days Active: #{@brian.days_active}")
         expect(page).to have_content("Days Active: #{@tina.days_active}")
       end
+
+      it "can sort guests by name" do
+        actual = page.all("h3").map(&:text)
+        unsorted = [@nick.name, @megan.name, @brian.name, @tina.name]
+
+        expect(actual).to eq(unsorted)
+
+        click_link "Sort by Name"
+
+        actual = page.all("h3").map(&:text)
+        sorted = [@brian.name, @megan.name, @nick.name, @tina.name]
+
+        expect(actual).to eq(sorted)
+      end
     end
   end
 
@@ -71,22 +84,21 @@ RSpec.describe "Resorts Guests Index Page" do
     end
 
     describe "links" do
-      it "shows link to All Guests" do
-        expect(page).to have_link("All Guests")
-        click_link "All Guests"
-        expect(current_path).to eq("/guests")
-      end
-
-      it "shows link to All Resorts" do
-        expect(page).to have_link("All Resorts")
-        click_link "All Resorts"
-        expect(current_path).to eq("/resorts")
-      end
+      test_for_link_to_guest_index
+      test_for_link_to_resort_index
 
       it "shows link to add a new guest" do
         expect(page).to have_link("Add New Guest")
         click_link "Add New Guest"
         expect(current_path).to eq("/resorts/#{@snow_summit.id}/guests/new")
+      end
+
+      it "shows link to sort guests by name" do
+        expect(page).to have_link("Sort by Name")
+
+        click_link "Sort by Name"
+
+        expect(current_path).to eq("/resorts/#{@snow_summit.id}/guests")
       end
     end
 
@@ -118,6 +130,20 @@ RSpec.describe "Resorts Guests Index Page" do
         expect(page).to have_content("Days Active: #{@sal.days_active}")
         expect(page).to have_content("Days Active: #{@ali.days_active}")
       end
+
+      it "can sort guests by name" do
+        actual = page.all("h3").map(&:text)
+        unsorted = [@nat.name, @sal.name, @ali.name]
+
+        expect(actual).to eq(unsorted)
+
+        click_link "Sort by Name"
+
+        actual = page.all("h3").map(&:text)
+        sorted = [@ali.name, @nat.name, @sal.name]
+
+        expect(actual).to eq(sorted)
+      end
     end
   end
 
@@ -127,22 +153,21 @@ RSpec.describe "Resorts Guests Index Page" do
     end
 
     describe "links" do
-      it "shows link to All Guests" do
-        expect(page).to have_link("All Guests")
-        click_link "All Guests"
-        expect(current_path).to eq("/guests")
-      end
-
-      it "shows link to All Resorts" do
-        expect(page).to have_link("All Resorts")
-        click_link "All Resorts"
-        expect(current_path).to eq("/resorts")
-      end
+      test_for_link_to_guest_index
+      test_for_link_to_resort_index
 
       it "shows link to add a new guest" do
         expect(page).to have_link("Add New Guest")
         click_link "Add New Guest"
         expect(current_path).to eq("/resorts/#{@bear_mountain.id}/guests/new")
+      end
+
+      it "shows link to sort guests by name" do
+        expect(page).to have_link("Sort by Name")
+
+        click_link "Sort by Name"
+
+        expect(current_path).to eq("/resorts/#{@bear_mountain.id}/guests")
       end
     end
 
@@ -171,6 +196,20 @@ RSpec.describe "Resorts Guests Index Page" do
       it "shows the number of days each guest has been active" do
         expect(page).to have_content("Days Active: #{@mike.days_active}")
         expect(page).to have_content("Days Active: #{@molly.days_active}")
+      end
+
+      it "can sort guests by name" do
+        actual = page.all("h3").map(&:text)
+        unsorted = [@molly.name, @mike.name]
+
+        expect(actual).to eq(unsorted)
+
+        click_link "Sort by Name"
+
+        actual = page.all("h3").map(&:text)
+        sorted = [@mike.name, @molly.name]
+
+        expect(actual).to eq(sorted)
       end
     end
   end

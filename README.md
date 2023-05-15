@@ -188,3 +188,29 @@ the guest's data is updated,
 and I am redirected to the Guest Show page where I see the guest's updated information
 
 &nbsp;
+
+### ActiveRecord 2
+
+&nbsp;
+
+[x] done
+
+User Story 15, Guest Index only shows `true` Records
+
+As a visitor
+When I visit the Guest Index
+Then I only see records where the boolean column is `true`
+
+&nbsp;
+
+[x] done
+
+User Story 16, Sort Resort's Guests in Alphabetical Order by name
+
+As a visitor
+When I visit the Resort's Guests Index Page
+Then I see a link to sort guests in alphabetical order
+When I click on the link
+I'm taken back to the Resort's Guest Index Page where I see all of the resort's guests in alphabetical order
+
+&nbsp;
