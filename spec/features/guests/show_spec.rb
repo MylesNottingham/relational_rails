@@ -21,6 +21,13 @@ RSpec.describe "Guest Show Page" do
         click_link "Update Guest"
         expect(current_path).to eq("/guests/#{@nick.id}/edit")
       end
+
+      it "shows link to delete guest" do
+        expect(page).to have_link("Delete Guest")
+        click_link "Delete Guest"
+        expect(current_path).to eq("/guests")
+        expect(page).to_not have_content(@nick.name)
+      end
     end
 
     describe "body" do
@@ -47,6 +54,13 @@ RSpec.describe "Guest Show Page" do
         click_link "Update Guest"
         expect(current_path).to eq("/guests/#{@sal.id}/edit")
       end
+
+      it "shows link to delete guest" do
+        expect(page).to have_link("Delete Guest")
+        click_link "Delete Guest"
+        expect(current_path).to eq("/guests")
+        expect(page).to_not have_content(@sal.name)
+      end
     end
 
     describe "body" do
@@ -72,6 +86,13 @@ RSpec.describe "Guest Show Page" do
         expect(page).to have_link("Update Guest")
         click_link "Update Guest"
         expect(current_path).to eq("/guests/#{@mike.id}/edit")
+      end
+
+      it "shows link to delete guest" do
+        expect(page).to have_link("Delete Guest")
+        click_link "Delete Guest"
+        expect(current_path).to eq("/guests")
+        expect(page).to_not have_content(@mike.name)
       end
     end
 

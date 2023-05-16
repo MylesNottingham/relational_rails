@@ -263,7 +263,7 @@ and I am redirected to the Resort Index page where I no longer see this resort
 
 &nbsp;
 
-[ ] done
+[x] done
 
 User Story 20, Guest Delete
 
