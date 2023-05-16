@@ -38,4 +38,10 @@ class ResortsController < ApplicationController
     resort.save
     redirect_to "/resorts/#{resort.id}"
   end
+
+  def destroy
+    Guest.where(resort_id: params[:id]).destroy_all
+    Resort.destroy(params[:id])
+    redirect_to "/resorts"
+  end
 end
