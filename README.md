@@ -242,3 +242,37 @@ When I click the link
 I should be taken to that guest's edit page where I can update its information just like in User Story 14
 
 &nbsp;
+
+## Iteration 3
+
+### CRUD 2
+
+&nbsp;
+
+[x] done
+
+User Story 19, Resort Delete
+
+As a visitor
+When I visit a Resort Show page
+Then I see a link to delete the resort
+When I click the link "Delete Resort"
+Then a 'DELETE' request is sent to '/resorts/:id',
+the resort is deleted, and all guest records are deleted
+and I am redirected to the Resort Index page where I no longer see this resort
+
+&nbsp;
+
+[x] done
+
+User Story 20, Guest Delete
+
+As a visitor
+When I visit a Guest Show page
+Then I see a link to delete the guest "Delete guest"
+When I click the link
+Then a 'DELETE' request is sent to '/guests/:id',
+the guest is deleted,
+and I am redirected to the Guest Index page where I no longer see this guest
+
+&nbsp;

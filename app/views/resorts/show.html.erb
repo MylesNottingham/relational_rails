@@ -8,4 +8,5 @@
 <h3>Max Capacity: <%= @resort.max_capacity %></h3>
 <h3>Open for Season: <%= @resort.open_for_season ? "Yes" : "No" %></h3>
 
-<%= link_to "Update Resort", "/resorts/#{@resort.id}/edit" %>
+<%= link_to "Update Resort", "/resorts/#{@resort.id}/edit" %><br/><br/>
+<%= link_to "Delete Resort", "/resorts/#{@resort.id}", method: :delete %>

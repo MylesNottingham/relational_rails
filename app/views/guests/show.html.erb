@@ -6,4 +6,5 @@
 <p>Days Active: <%= @guest.days_active %></p>
 <p>Resort ID: <%= @guest.resort_id %></p>
 
-<%= link_to "Update Guest", "/guests/#{@guest.id}/edit" %>
+<%= link_to "Update Guest", "/guests/#{@guest.id}/edit" %><br/>
+<%= link_to "Delete Guest", "/guests/#{@guest.id}", method: :delete %>

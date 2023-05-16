@@ -27,6 +27,13 @@ RSpec.describe "Resort Show Page" do
         click_link "Update Resort"
         expect(current_path).to eq("/resorts/#{@mammoth.id}/edit")
       end
+
+      it "shows link to delete resort" do
+        expect(page).to have_link("Delete Resort")
+        click_link "Delete Resort"
+        expect(current_path).to eq("/resorts")
+        expect(page).to_not have_content(@mammoth.name)
+      end
     end
 
     describe "body" do
@@ -59,6 +66,13 @@ RSpec.describe "Resort Show Page" do
         click_link "Update Resort"
         expect(current_path).to eq("/resorts/#{@snow_summit.id}/edit")
       end
+
+      it "shows link to delete resort" do
+        expect(page).to have_link("Delete Resort")
+        click_link "Delete Resort"
+        expect(current_path).to eq("/resorts")
+        expect(page).to_not have_content(@snow_summit.name)
+      end
     end
 
     describe "body" do
@@ -90,6 +104,13 @@ RSpec.describe "Resort Show Page" do
         expect(page).to have_link("Update Resort")
         click_link "Update Resort"
         expect(current_path).to eq("/resorts/#{@bear_mountain.id}/edit")
+      end
+
+      it "shows link to delete resort" do
+        expect(page).to have_link("Delete Resort")
+        click_link "Delete Resort"
+        expect(current_path).to eq("/resorts")
+        expect(page).to_not have_content(@bear_mountain.name)
       end
     end
 

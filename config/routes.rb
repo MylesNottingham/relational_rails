@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/resorts/new", to: "resorts#new"
   get "/resorts/:id", to: "resorts#show"
   patch "/resorts/:id", to: "resorts#update"
+  delete "/resorts/:id", to: "resorts#destroy"
   get "/resorts/:id/edit", to: "resorts#edit"
 
   get "/resorts/:id/guests", to: "resorts/guests#index"
@@ -19,5 +20,6 @@ Rails.application.routes.draw do
   get "/guests", to: "guests#index"
   get "/guests/:id", to: "guests#show"
   patch "/guests/:id", to: "guests#update"
+  delete "/guests/:id", to: "guests#destroy"
   get "/guests/:id/edit", to: "guests#edit"
 end
