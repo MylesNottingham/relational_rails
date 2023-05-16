@@ -35,10 +35,28 @@ RSpec.describe "Resort Index Page" do
       expect(actual).to eq(expected)
     end
 
-    it "shows links to each resort's update page" do
+    it "shows links to Mammoth's update page" do
       expect(page).to have_link("Edit #{@mammoth.name}")
+
+      click_link @mammoth.name
+
+      expect(current_path).to eq("/resorts/#{@mammoth.id}/edit")
+    end
+
+    it "shows links to Snow Summit's update page" do
       expect(page).to have_link("Edit #{@snow_summit.name}")
+
+      click_link @snow_summit.name
+
+      expect(current_path).to eq("/resorts/#{@snow_summit.id}/edit")
+    end
+
+    it "shows links to Bear Mountain's update page" do
       expect(page).to have_link("Edit #{@bear_mountain.name}")
+
+      click_link @bear_mountain.name
+
+      expect(current_path).to eq("/resorts/#{@bear_mountain.id}/edit")
     end
   end
 end
