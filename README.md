@@ -219,7 +219,7 @@ I'm taken back to the Resort's Guest Index Page where I see all of the resort's 
 
 &nbsp;
 
-[ ] done
+[x] done
 
 User Story 17, Resort Update From Resort Index Page
 

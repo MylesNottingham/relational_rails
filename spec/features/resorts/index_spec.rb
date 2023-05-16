@@ -34,5 +34,11 @@ RSpec.describe "Resort Index Page" do
 
       expect(actual).to eq(expected)
     end
+
+    it "shows links to each resort's update page" do
+      expect(page).to have_link("Edit #{@mammoth.name}")
+      expect(page).to have_link("Edit #{@snow_summit.name}")
+      expect(page).to have_link("Edit #{@bear_mountain.name}")
+    end
   end
 end
