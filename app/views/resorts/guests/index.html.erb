@@ -7,6 +7,7 @@
   <h3><%= guest.name %></h3>
   <p>Pass Holder: <%= guest.pass_holder ? "Yes" : "No" %></p>
   <p>Days Active: <%= guest.days_active %></p>
+  <%= link_to "Edit #{guest.name}", "/guests/#{guest.id}/edit" %>
 <% end %>
 
 <%= link_to "Add New Guest", "/resorts/#{@resort.id}/guests/new" %><br/><br/>

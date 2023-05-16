@@ -231,7 +231,7 @@ I should be taken to that resort's edit page where I can update its information 
 
 &nbsp;
 
-[ ] done
+[x] done
 
 User Story 18, Guest Update From Guests Index Page
 

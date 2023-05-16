@@ -11,6 +11,30 @@ RSpec.describe "Guest Index Page" do
   describe "links" do
     test_for_link_to_guest_index
     test_for_link_to_resort_index
+
+    it "shows link to a guest's update page" do
+      expect(page).to have_link("Edit #{@nick.name}")
+
+      click_link @nick.name
+
+      expect(current_path).to eq("/guests/#{@nick.id}/edit")
+    end
+
+    it "shows link to another guest's update page" do
+      expect(page).to have_link("Edit #{@nat.name}")
+
+      click_link @nat.name
+
+      expect(current_path).to eq("/guests/#{@nat.id}/edit")
+    end
+
+    it "shows link to yet another guest's update page" do
+      expect(page).to have_link("Edit #{@mike.name}")
+
+      click_link @mike.name
+
+      expect(current_path).to eq("/guests/#{@mike.id}/edit")
+    end
   end
 
   describe "Body" do
