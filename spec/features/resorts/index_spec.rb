@@ -17,6 +17,24 @@ RSpec.describe "Resort Index Page" do
       click_link "New Resort"
       expect(current_path).to eq("/resorts/new")
     end
+
+    it "links to Mammoth's update page" do
+      click_link @mammoth.name
+
+      expect(current_path).to eq("/resorts/#{@mammoth.id}/edit")
+    end
+
+    it "links to Snow Summit's update page" do
+      click_link @snow_summit.name
+
+      expect(current_path).to eq("/resorts/#{@snow_summit.id}/edit")
+    end
+
+    it "links to Bear Mountain's update page" do
+      click_link @bear_mountain.name
+
+      expect(current_path).to eq("/resorts/#{@bear_mountain.id}/edit")
+    end
   end
 
   describe "Body" do
@@ -33,6 +51,12 @@ RSpec.describe "Resort Index Page" do
       ]
 
       expect(actual).to eq(expected)
+    end
+
+    it "shows link to all resorts' update pages" do
+      expect(page).to have_link("Edit #{@mammoth.name}")
+      expect(page).to have_link("Edit #{@snow_summit.name}")
+      expect(page).to have_link("Edit #{@bear_mountain.name}")
     end
   end
 end
