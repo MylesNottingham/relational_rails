@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   get "/resorts/:id/guests", to: "resorts/guests#index"
   post "/resorts/:id/guests", to: "resorts/guests#create"
   get "/resorts/:id/guests/new", to: "resorts/guests#new"
-  # get "/resorts/:id/guests?sorted=true", to: "resorts/guests#index"
 
   get "/guests", to: "guests#index"
   get "/guests/:id", to: "guests#show"
