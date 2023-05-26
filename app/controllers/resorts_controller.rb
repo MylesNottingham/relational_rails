@@ -15,7 +15,7 @@ class ResortsController < ApplicationController
       {
         name: params[:resort][:name],
         max_capacity: params[:resort][:max_capacity],
-        open_for_season: params[:resort][:open_for_season] == "true" ? true : false
+        open_for_season: params[:resort][:open_for_season] == "true"
       }
     )
     resort.save
@@ -32,7 +32,7 @@ class ResortsController < ApplicationController
       {
         name: params[:resort][:name],
         max_capacity: params[:resort][:max_capacity],
-        open_for_season: params[:resort][:open_for_season] == "true" ? true : false
+        open_for_season: params[:resort][:open_for_season] == "true"
       }
     )
     resort.save

@@ -16,7 +16,7 @@ class GuestsController < ApplicationController
     guest.update(
       {
         name: params[:guest][:name],
-        pass_holder: params[:guest][:pass_holder] == "true" ? true : false,
+        pass_holder: params[:guest][:pass_holder] == "true",
         days_active: params[:guest][:days_active],
         resort_id: params[:guest][:resort_id]
       }
